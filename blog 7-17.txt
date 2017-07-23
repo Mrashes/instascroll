@@ -1,0 +1,19 @@
+Holy cow.  This has been such a struggle I decided I needed to work on documentation for all this.  A blog I felt would be apt so here it goes.  I should just mention that I want to get my thoughts down and it may be A) in the weeds B) incoherent.  You've been warned
+
+I want to make an Instagram image scroll (ideally from a geocode but at the moment it’s going to be tags).  Originally it was intended to go through twitter and have the tweets scrolling but I felt images would be better for this application.  Once I decided on images, I figured Instagram would be the platform of choice as it has ample images and they are easily tagged by users.
+
+(Original Sketch)
+
+Instagram’s public API has a few quirks, the least of which is once you get in they restrict you to only using your own profile to pull from.  They outline different login permissions at: https://www.instagram.com/developer/authorization/ but fail to mention that you don't get access to these permissions until you go through a rigorous approval process.  Not aware of this, rigged a express.js tutorial I had done a while back to handle an OAuth (which I had never done before).  This basically resulted in me getting the token then feeding it through separately as I didn't know what i was doing.
+
+(picture of the code (Maybe))
+
+With the authorization completed I tried to use their endpoints to query all pictures with dogs as a tag and it returned to me that I needed to be in the Public scope.  This is where I found out about the approval process, I wasn't pleased.  I had to change my approach to the problem.  If Instagram wasn't going to help me find the data I would find it myself, this resulted in me turning to Web Scraping.
+
+(Picture of automate the boring stuff with python)
+
+I learned about Web Scaping from Automate the Boring Stuff with Python by Al Sweigart (my first foray in to coding).  Those not familiar with the concept: web scraping is the idea of taking a websites html and picking it a part to get data that you want.  Using this tool I wanted to scrape Instagram's feed to pull out the image url from the page.  The problem is it's dynamic, it adds the images after you load the page, so I needed to find another way in.
+
+This is where Richard Arcega came in.  He had created a Python and a Node.js Instagram scraper.  Through reading his code I learned that instagrams front end is exposed through 2 urls: for tags - https://www.instagram.com/explore/tags/{tagGoesHere}/?__a=1  for users - https://www.instagram.com/{usernameHere}/media/.  These allow me direct access to the url's of the images seen on a search page.
+
+I am so thrilled about how far I've come as this is a huge deal.  My next steps will be to update the app so it's not only in node (my server) but I branch into React to display the data.  This will be a big jump but I've been teaching myself react and express on the side.  We shall see where this all goes, just wanted to get my thoughts down!

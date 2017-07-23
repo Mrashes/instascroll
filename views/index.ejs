@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Instagram image scroll</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<div class='container'>
+		<form action='/' method='post'>
+			<input type="text" name="tag" class="ghost-input" placeholder="Tag to search" required>
+			<input type="submit" class="ghost-button" value="Get Images">
+		</form>
+		<% if(imgurl !== null) { %>
+			 <style>
+				body {
+						background-image: url(<%= imgurl %>);
+				} 
+			</style> 
+			<!-- <p><%= imgurl %></p> -->
+			<script>
+				//<%= imgurl %>
+				//set interval
+				//take image
+				//counter ++
+				//if counter == imageurl.length
+					//counter = 0
+			</script>
+		<% } %>
+		<% if(error !== null){ %>
+			<p><%= error %></p>
+		<% } %>
+	</div>
+
+</body>
+</html>
+
