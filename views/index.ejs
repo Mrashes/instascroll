@@ -13,6 +13,17 @@
 		</form>
 	</div>
 	<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg">
+	<% if(imgurl !== null) { %>
+		<p id="imgURL"><%= imgurl %></p>
+		<script>
+			console.log(<%= imgurl %>[0]);
+		</script>
+	<% } %>
+
+	<% if(error !== null){ %>
+		<p><%= error %></p>
+	<% } %>
+
 </body>
 </html>
 

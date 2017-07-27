@@ -1,7 +1,7 @@
 //Show User Media from Instagram - https://www.instagram.com/{Username}/media/
   //where I found the user media link - https://github.com/rarcega/instagram-scraper-node
-
 const request = require('request')
+
 let query = 'chicago'
 let url = `https://www.instagram.com/explore/tags/${query}/?__a=1`
 

@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function (req, res){
-	res.render('index');
+	res.render('index', {imgurl: null, error: null});
 })
 
 app.post('/', function (req, res) {
