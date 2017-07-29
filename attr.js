@@ -19,7 +19,6 @@ function img(req, res) {
     scrape(req, res).then(function(results){
         urlArray = results
     })
-    imgRotater(req, res, urlArray);
 }
 
 
