@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Instagram image scroll</title>
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
+
 </head>
 <body>
 	<div class='container'>
@@ -12,12 +13,16 @@
 			<input type="submit" class="ghost-button" value="Get Images">
 		</form>
 	</div>
-	<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg">
 	<% if(imgurl !== null) { %>
-		<p id="imgURL"><%= imgurl %></p>
-		<script>
-			console.log(<%= imgurl %>[0]);
-		</script>
+		<script src="/js/photoscroll.js"></script>
+		<script src="/js/populateDiv.js"></script>
+		<div id='newimg'>
+			<script>
+				var imgurl = '<%= imgurl%>'
+				addImg(imgurl.split(','))
+			</script>
+		</div>
+
 	<% } %>
 
 	<% if(error !== null){ %>

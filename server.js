@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const img = require('./attr.js')
+const scrape = require('./app.js')
 // const request = require('request');
 // const moment = require('moment');
 // const request = require('request')
@@ -18,8 +19,8 @@ app.get('/', function (req, res){
 })
 
 app.post('/', function (req, res) {
-    img(req, res);
-    // scrape(req, res);
+    // img(req, res);
+    scrape(req, res);
 })
 
 app.listen(port, function () {

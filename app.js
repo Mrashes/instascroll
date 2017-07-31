@@ -7,8 +7,8 @@ let url = `https://www.instagram.com/explore/tags/${query}/?__a=1`
 
 //This request searches for the url which returns a json file in a string  I need to figure out how to feed it to a site
 function scrape(req, res) {
-  return new Promise (
-    function(resolve, reject) {
+//   return new Promise (
+//     function(resolve, reject) {
       let query = req.body.tag;
       // console.log(query)
       let url = `https://www.instagram.com/explore/tags/${query}/?__a=1`
@@ -24,21 +24,21 @@ function scrape(req, res) {
                     for (i=0; i<json.tag.top_posts.nodes.length; i++) {
                         imgURL.push(json.tag.top_posts.nodes[i].display_src)
                     }
-                    
-                    resolve(imgURL)
+                    res.render('index', {imgurl: imgURL, error: null})
+                    // resolve(imgURL)
                 }
                 else{
                     let imgURL = [];
                     for (i=0; i<json.tag.media.nodes.length; i++) {
                         imgURL.push(json.tag.media.nodes[i].display_src)
                     }
-                    
-                    resolve(imgURL)
+                    res.render('index', {imgurl: imgURL, error: null})
+                    // resolve(imgURL)
                 }
             }
         });
-    }
-  )
+//     }
+//   )
 }
 
 module.exports = scrape;
