@@ -16,11 +16,11 @@
 	<% if(imgurl !== null) { %>
 		<script src="/js/photoscroll.js"></script>
 		<script src="/js/populateDiv.js"></script>
-		<div id='newimg'>
-			<script>
+		<div id='newimg' class="imgs">
+			  <script>
 				var imgurl = '<%= imgurl%>'
-				addImg(imgurl.split(','))
-			</script>
+				 addImg(imgurl.split(',')) 
+			 </script>   
 		</div>
 
 	<% } %>
