@@ -6,7 +6,7 @@ function addImg(imgArray) {
         var img = document.createElement('img');
         img.src = imgArray[i];
         //styling for control
-        img.style = "height: 300px;"
+        img.className = "image"
         // appending div in
         imgDiv.appendChild(img);
     }
